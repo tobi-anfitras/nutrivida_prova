@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriVida | Refeições</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="visitor">👤 Olá, Visitante</div>
+    <div class="brand"><span>🌿</span><strong>NutriVida</strong><span>🌿</span></div>
+    <div class="brand-bowl" aria-label="Tigela de salada">🥗</div>
+
+    <div class="side-stats">
+      <div><span>♨ Refeições</span><strong>0</strong></div>
+      <div><span>🔥 Calorias totais</span><strong>0 kcal</strong></div>
+    </div>
+
+    <section class="my-plan">
+      <h2><img src="assets/plano.svg" alt=""> Meu Plano</h2>
+      <p>Entre para criar seu plano alimentar.</p>
+      <button class="summary-button"><img src="assets/resumo.svg" alt=""> Ver resumo do plano</button>
+    </section>
+
+    <footer class="sidebar-footer">
+      <div class="footer-brand">🌿 NutriVida 🌿</div>
+      <p>Alimentação e bem-estar</p>
+      <small>Projeto demonstrativo • 2026</small>
+    </footer>
+  </aside>
+
+  <main class="main-content">
+    <nav class="tabs" aria-label="Categorias">
+      <a class="tab active" href="#refeicoes">🥗 Refeições</a>
+      <a class="tab" href="#lanches">🍎 Lanches</a>
+      <a class="tab" href="#vitaminas">🥤 Vitaminas</a>
+    </nav>
+
+    <header class="section-heading" id="refeicoes">
+      <div>
+        <h1>🥗 Refeições</h1>
+        <p>Escolha alimentos e adicione ao seu plano alimentar.</p>
+      </div>
+      <a class="login-button" id="abrirLogin">👤 Entrar / Cadastrar</a>
+    </header>
+
+    <section class="meal-list" aria-label="Lista de refeições">
+      <article class="meal-card green-card">
+        <div class="meal-picture">🥗</div>
+        <div class="meal-info">
+          <h2>🥗 Salada Proteica</h2>
+          <p class="details">Quantidade: <b>1</b> &nbsp; Tempo: <b>10 min</b> &nbsp; Calorias: <b>420 kcal</b></p>
+          <p class="description">Frango grelhado, folhas frescas, tomate e grãos.</p>
+          <div class="meal-actions">
+            <button class="favorite"><img src="assets/CoracaoVermelho.svg" alt=""> Favoritar</button>
+            <button class="rate"><img src="assets/avaliacao.svg" alt=""> Avaliar</button>
+            <button class="add"><img src="assets/adicionar.svg" alt=""> Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="meal-card orange-card">
+        <div class="meal-picture">🍗</div>
+        <div class="meal-info">
+          <h2>🍗 Frango com Legumes</h2>
+          <p class="details">Quantidade: <b>1</b> &nbsp; Tempo: <b>15 min</b> &nbsp; Calorias: <b>430 kcal</b></p>
+          <p class="description">Filé de frango com legumes salteados.</p>
+          <div class="meal-actions">
+            <button class="favorite"><img src="assets/CoracaoVermelho.svg" alt=""> Favoritar</button>
+            <button class="rate"><img src="assets/avaliacao.svg" alt=""> Avaliar</button>
+            <button class="add"><img src="assets/adicionar.svg" alt=""> Adicionar</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="meal-card green-card">
+        <div class="meal-picture">🐟</div>
+        <div class="meal-info">
+          <h2>🐟 Arroz Integral com Peixe</h2>
+          <p class="details">Quantidade: <b>1</b> &nbsp; Tempo: <b>25 min</b> &nbsp; Calorias: <b>510 kcal</b></p>
+          <p class="description">Peixe assado, arroz integral e vegetais.</p>
+          <div class="meal-actions">
+            <button class="favorite"><img src="assets/CoracaoVermelho.svg" alt=""> Favoritar</button>
+            <button class="rate"><img src="assets/avaliacao.svg" alt=""> Avaliar</button>
+            <button class="add"><img src="assets/adicionar.svg" alt=""> Adicionar</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <nav class="pagination" aria-label="Paginação">
+      <a class="previous" href="#anterior">← Anterior</a>
+      <a class="current" href="#pagina1">1</a>
+      <a href="#pagina2">2</a>
+      <a class="next" href="#proximo">Próximo →</a>
+    </nav>
+    <p class="disclaimer">Valores nutricionais ilustrativos, não substituem orientação nutricional individualizada.</p>
+  </main>
+
+  <!-- Tela sobreposta (Modal de Login) -->
+  <div class="modal-overlay" id="modalLogin" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tituloLogin">
+      <button type="button" class="modal-fechar" id="fecharLogin" aria-label="Fechar janela">&times;</button>
+      <h2 id="tituloLogin">Entrar</h2>
+      <p class="modal-subtitulo">Acesse sua conta para montar seu plano alimentar.</p>
+
+      <form class="form-login" id="formLogin">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+        <p class="mensagem-erro" id="erroLogin" role="alert" aria-live="polite"></p>
+
+        <button type="submit" class="botao-entrar" id="btnEntrar">Entrar</button>
+      </form>
+      <p class="cadastro">
+        Não tem uma conta? <a href="#cadastro" id="linkCadastro">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="scriptIndex.js"></script>
+</body>
+
+</html>
